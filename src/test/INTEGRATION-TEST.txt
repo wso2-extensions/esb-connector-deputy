@@ -17,8 +17,7 @@ Steps to follow in setting integration test.
 
  1. Download wso2esb-4.9.0 from official website.
 
- 2. Deploy relevant patches, if applicable and the ESB should be configured as below.
-	 Please make sure that the below mentioned Axis configurations are enabled ({ESB_Connector_Home}/repository/conf/axis2/axis2.xml).
+ 2.	Please make sure that the below mentioned Axis configurations are enabled ({ESB_Connector_Home}/repository/conf/axis2/axis2.xml).
 		
 		<messageFormatter contentType="text/html" class="org.wso2.carbon.relay.ExpandingMessageFormatter"/>
 		<messageBuilder contentType="text/html" class="org.wso2.carbon.relay.BinaryRelayBuilder"/>
