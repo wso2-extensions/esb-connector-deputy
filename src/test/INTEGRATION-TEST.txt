@@ -28,7 +28,7 @@ Steps to follow in setting integration test.
 	i) 		Using the URL "http://www.deputy.com/" create a Deputy trial account.
 	ii)		Login to the created Deputy account and go to https://{Unique Deputy URL for created account}.deputy.com/exec/devapp/oauth_clients Create a dummy client of yours and Get a permanent Access Token from there.
 
- 5. Update the Deputy properties file at location "{Deputy_Connector_Home}/deputy-connector/deputy-connector-1.0.0/org.wso2.carbon.connector/src/test/resources/artifacts/ESB/connector/config" as below.
+ 5. Update the Deputy properties file at location "{Deputy_Connector_Home}/src/test/resources/artifacts/ESB/connector/config" as below.
 	
 	i)		apiUrl 							- 	The API URL specific to the created account.
 	ii) 	apiKey							-   Use the API Key obtained under Step 4 ii).
