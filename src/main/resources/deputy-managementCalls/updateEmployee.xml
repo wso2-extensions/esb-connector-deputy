@@ -25,7 +25,6 @@
     <parameter name="roleId" description="The roleId."/>
     <parameter name="dateOfBirth" description="Date of birthof the employee."/>
     <parameter name="mobilePhone" description="Mobile phone number of the employee."/>
-
     <sequence>
         <property expression="$func:employeeId" name="uri.var.employeeId"/>
         <property expression="$func:companyId" name="uri.var.companyId"/>
@@ -35,13 +34,10 @@
         <property expression="$func:roleId" name="uri.var.roleId"/>
         <property expression="$func:dateOfBirth" name="uri.var.dateOfBirth"/>
         <property expression="$func:mobilePhone" name="uri.var.mobilePhone"/>
-
         <script language="js">
             <![CDATA[
-                    
 	            // Set optional parameters
 	            var payload = new Object();
-	                
 	            var companyId = mc.getProperty('uri.var.companyId');
 				var firstName = mc.getProperty('uri.var.firstName');
 				var lastName = mc.getProperty('uri.var.lastName');
@@ -49,7 +45,6 @@
 				var roleId = mc.getProperty('uri.var.roleId');
 				var dateOfBirth = mc.getProperty('uri.var.dateOfBirth');
 				var mobilePhone = mc.getProperty('uri.var.mobilePhone');
-	                            
                 if (companyId != null && companyId != "") {
                        payload.intCompanyId = companyId; 
                 } 
@@ -71,23 +66,19 @@
 				if (mobilePhone != null && mobilePhone != "") {
                        payload.strMobilePhone = mobilePhone; 
                 }
-	            mc.setPayloadJSON(payload); 
-                      
+	            mc.setPayloadJSON(payload);
         	]]>
         </script>
-
         <call>
             <endpoint>
                 <http method="post"
                       uri-template="{uri.var.apiUrl}/supervise/employee/{uri.var.employeeId}"/>
             </endpoint>
         </call>
-
         <!-- Remove custom header information in response -->
         <header name="Vary" scope="transport" action="remove"/>
         <header name="Server-UnixTime" scope="transport" action="remove"/>
         <header name="Expires" scope="transport" action="remove"/>
         <header name="Cache-Control" scope="transport" action="remove"/>
-
     </sequence>
 </template>
