@@ -22,18 +22,14 @@
     <sequence>
         <property name="uri.var.apiUrl" expression="$func:apiUrl"/>
         <property name="uri.var.accessToken" expression="$func:accessToken"/>
-
         <!-- Setting up the REQUEST_HOST_HEADER property according to the api URL -->
         <property name="uri.var.hostHeader"
                   expression="fn:substring-after(get-property('uri.var.apiUrl'),'https://')"/>
-
         <property name="REQUEST_HOST_HEADER"
                   expression="fn:concat(get-property('uri.var.hostHeader'),':443')" scope="axis2"/>
-
         <!-- Default value cannot be set to apiUrl because it depends on a domain name. -->
         <property name="uri.var.apiUrl"
                   expression="fn:concat(get-property('uri.var.apiUrl'),'/api/v1')"/>
-
         <!-- Header information in request -->
         <header name="Content-Type" value="application/json" scope="transport"/>
         <header name="Authorization"

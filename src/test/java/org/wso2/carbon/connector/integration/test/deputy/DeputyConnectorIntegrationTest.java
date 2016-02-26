@@ -52,10 +52,8 @@ public class DeputyConnectorIntegrationTest extends ConnectorIntegrationTestBase
         esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
         esbRequestHeadersMap.put("Content-Type", "application/json");
         esbRequestHeadersMap.put("Accept", "application/json");
-
         apiRequestHeadersMap.putAll(esbRequestHeadersMap);
         apiRequestHeadersMap.put("Authorization", "OAuth " + connectorProperties.getProperty("accessToken"));
-
         apiRequestUrl = connectorProperties.getProperty("apiUrl") + "/api/v1";
     }
 

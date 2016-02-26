@@ -23,7 +23,6 @@
     <parameter name="publish" description="The is shift published for roster to be created."/>
     <parameter name="mealbreakMinute" description="Number of minutes you have a mealbreak for."/>
     <parameter name="opUnitId" description="The department/area ID for creating."/>
-
     <sequence>
         <property expression="$func:startTimestamp" name="uri.var.startTimestamp"/>
         <property expression="$func:endTimestamp" name="uri.var.endTimestamp"/>
@@ -31,7 +30,6 @@
         <property expression="$func:publish" name="uri.var.publish"/>
         <property expression="$func:mealbreakMinute" name="uri.var.mealbreakMinute"/>
         <property expression="$func:opUnitId" name="uri.var.opUnitId"/>
-
         <payloadFactory media-type="json">
             <format>
                 {
@@ -48,40 +46,30 @@
                 <arg expression="get-property('uri.var.opUnitId')"/>
             </args>
         </payloadFactory>
-
         <script language="js">
             <![CDATA[
-                    
 				// Set optional parameters
 	            var payload = mc.getPayloadJSON();
-
 				var publish = mc.getProperty('uri.var.publish');
 				var mealbreakMinute = mc.getProperty('uri.var.mealbreakMinute');
-
 				if (publish != null && publish != "") {
                        payload.blnPublish  = publish; 
                 }
-                 
 				if (mealbreakMinute != null && mealbreakMinute != "") {
                        payload.intMealbreakMinute  = mealbreakMinute;
 				}
-
-	            mc.setPayloadJSON(payload); 
-                      
+	            mc.setPayloadJSON(payload);
         	]]>
         </script>
-
         <call>
             <endpoint>
                 <http method="post" uri-template="{uri.var.apiUrl}/supervise/roster"/>
             </endpoint>
         </call>
-
         <!-- Remove custom header information in response -->
         <header name="Vary" scope="transport" action="remove"/>
         <header name="Server-UnixTime" scope="transport" action="remove"/>
         <header name="Expires" scope="transport" action="remove"/>
         <header name="Cache-Control" scope="transport" action="remove"/>
-
     </sequence>
 </template>
