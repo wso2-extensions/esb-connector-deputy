@@ -3,12 +3,12 @@
     "f2": {
       "field": "DateStart",
       "type": "le",
-      "data": "2014-%s(month)-31"
+      "data": "2016-%s(month)-31"
     },
     "f3": {
       "field": "DateStart",
       "type": "ge",
-      "data": "2014-%s(month)-01"
+      "data": "2016-%s(month)-01"
     }
   }
 }

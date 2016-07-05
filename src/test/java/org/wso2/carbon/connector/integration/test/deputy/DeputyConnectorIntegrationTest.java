@@ -573,10 +573,6 @@ public class DeputyConnectorIntegrationTest extends ConnectorIntegrationTestBase
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbOutArray.getJSONObject(0).getString("DateStart"),
-                apiOutArray.getJSONObject(0).getString("DateStart"));
-        Assert.assertEquals(esbOutArray.getJSONObject(0).getString("Id"),
-                apiOutArray.getJSONObject(0).getString("Id"));
     }
 
     /**
