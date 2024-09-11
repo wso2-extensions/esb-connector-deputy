@@ -4,7 +4,7 @@
     "category": "Human Resource Management",
     "documentationUrl": "https://docs.wso2.com/display/ESBCONNECTORS/Deputy+Connector",
     "description": "The Deputy connector allows you to access the Deputy REST API through the WSO2 ESB. Deputy is a cloud-based employee scheduling and workforce management software, designed to facilitate communication between business owners, managers, and employees, helping busy professionals stay in touch even while on the go.",
-    "status": "Active",
+    "status": "Inactive",
     "labels": [
         "connector"
     ],
